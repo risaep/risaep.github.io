@@ -3,78 +3,173 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Risaep - Toko Kerudung</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risaep | Toko Kerudung</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Link your custom CSS file if needed -->
+    <link href="/asset/css/style.css" rel="stylesheet">
+
+    <!-- Font Awesome CDN -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+<!-- Splide CSS -->
+<link rel="stylesheet" href="https://unpkg.com/@splidejs/splide@3.0.11/dist/css/splide.min.css">
+
+<!-- Splide JS -->
+<script src="https://unpkg.com/@splidejs/splide@3.0.11/dist/js/splide.min.js"></script>
+
 </head>
 
 <body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-white py-4 shadow-lg">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="text-lg font-semibold text-gray-900">
+                <img src="/path/to/risaep-logo.png" alt="Risaep" class="w-24">
+            </a>
 
-    <header class="bg-white shadow-md">
-        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
-            <h1 class="text-2xl font-semibold">Risaep - Toko Kerudung</h1>
-            <button id="toggleCart" class="bg-blue-500 text-white px-4 py-2 rounded-md">Keranjang Belanja (0)</button>
-        </div>
-    </header>
+            <!-- Search bar -->
+            <div class="w-2/5">
+                <input type="text" class="w-full bg-gray-100 border-2 border-gray-200 py-2 px-4 rounded-lg focus:outline-none focus:border-purple-500" placeholder="Search for products...">
+            </div>
 
-    <main class="container mx-auto py-8">
-        <div class="grid grid-cols-3 gap-6">
-            <!-- Product cards will be dynamically added here -->
-            <div class="products col-span-2 grid grid-cols-2 gap-3"></div>
+            <!-- Navigation Links -->
+            <div class="flex items-center space-x-6">
+                <a href="#" class="text-gray-700 hover:text-purple-500">Categories</a>
+                <a href="#" class="text-gray-700 hover:text-purple-500">Notifications</a>
+                <a href="#" class="text-gray-700 hover:text-purple-500"><i class="fas fa-shopping-cart"></i></a>
+            </div>
         </div>
-    </main>
+    </nav>
+
+    <aside class="hidden md:block col-span-2">
+        <div class="bg-white p-4 shadow-lg rounded-lg shoppe-header-section_content grid grid-cols-5 gap-4">
+            <!-- Spacer for Centering Content -->
+            <div class="col-span-1"></div>
+            <!-- Content -->
+            <div class="col-span-3">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-xl font-semibold mb-4">Kategori</h2>
+                    <div class="flex justify-center">
+                        <div class="splide__slide col-span-4 flex justify-between w-full max-w-4xl">
+                            <!-- Your card elements -->
+                            <!-- Kategori 1 -->
+                            <div class="bg-gray-100 p-2 rounded-md w-1/4 mr-4">
+                                <h3 class="text-sm font-semibold border-b pb-2 mb-2">Segiempat</h3>
+                                <img src="/path/to/category1-image.jpg" alt="Category 1" class="w-full h-32 object-cover rounded-md">
+                                <p class="text-sm font-semibold mt-2">Deskripsi Segiempat</p>
+                            </div>
+                            <!-- Kategori 2 -->
+                            <div class="bg-gray-100 p-2 rounded-md w-1/4 mr-4">
+                                <h3 class="text-sm font-semibold border-b pb-2 mb-2">Kerudung bergo</h3>
+                                <img src="/path/to/category2-image.jpg" alt="Category 2" class="w-full h-32 object-cover rounded-md">
+                                <p class="text-sm font-semibold mt-2">Deskripsi Kerudung Bergo</p>
+                            </div>
+                            <!-- Kategori 3 -->
+                            <div class="bg-gray-100 p-2 rounded-md w-1/4 mr-4">
+                                <h3 class="text-sm font-semibold border-b pb-2 mb-2">Pashmina</h3>
+                                <img src="/path/to/category3-image.jpg" alt="Category 3" class="w-full h-32 object-cover rounded-md">
+                                <p class="text-sm font-semibold mt-2">Deskripsi Pashmina</p>
+                            </div>
+                            <!-- Kategori 4 -->
+                            <div class="bg-gray-100 p-2 rounded-md w-1/4 mr-4">
+                                <h3 class="text-sm font-semibold border-b pb-2 mb-2">Khimari</h3>
+                                <img src="/path/to/category4-image.jpg" alt="Category 4" class="w-full h-32 object-cover rounded-md">
+                                <p class="text-sm font-semibold mt-2">Deskripsi Khimari</p>
+                            </div>
+                            <!-- Repeat the card elements -->
+                        </div>
+                    </div>
+                    <!-- Navigation buttons -->
+                    <div class="flex justify-between mt-2">
+                        <button class="bg-gray-300 px-4 py-2 rounded-md">Previous</button>
+                        <button class="bg-gray-300 px-4 py-2 rounded-md">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
     
-
-    <div id="cart" class="fixed top-0 right-0 bg-white p-4 shadow-md w-80 hidden">
-        <h2 class="text-xl font-semibold mb-4">Keranjang Belanja</h2>
-        <ul id="cartItems"></ul>
+<!-- Product Section -->
+<div class="container mx-auto px-4 mt-8 flex justify-center">
+    <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <a href="#">
+            <img class="p-8 rounded-t-lg" src="/docs/images/products/apple-watch.png" alt="product image" />
+        </a>
+        <div class="px-5 pb-5">
+            <a href="#">
+                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport</h5>
+            </a>
+            <div class="flex items-center mt-2.5 mb-5">
+                <!-- Star rating -->
+                <!-- Your star rating SVGs -->
+                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">5.0</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
+                <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
+            </div>
+        </div>
     </div>
 
-    <footer class="bg-gray-200 text-center py-4">
-        &copy; 2023 Risaep - Toko Kerudung
+    <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <a href="#">
+            <img class="p-8 rounded-t-lg" src="/docs/images/products/apple-watch.png" alt="product image" />
+        </a>
+        <div class="px-5 pb-5">
+            <a href="#">
+                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport</h5>
+            </a>
+            <div class="flex items-center mt-2.5 mb-5">
+                <!-- Star rating -->
+                <!-- Your star rating SVGs -->
+                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">5.0</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
+                <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <a href="#">
+            <img class="p-8 rounded-t-lg" src="/docs/images/products/apple-watch.png" alt="product image" />
+        </a>
+        <div class="px-5 pb-5">
+            <a href="#">
+                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport</h5>
+            </a>
+            <div class="flex items-center mt-2.5 mb-5">
+                <!-- Star rating -->
+                <!-- Your star rating SVGs -->
+                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">5.0</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
+                <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
+            </div>
+        </div>
+    </div>
+    
+</div>
+    
+    
+    
+<!-- Footer -->
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-4 mt-auto">
+        <div class="container mx-auto px-4">
+            <p class="text-center text-sm">© Risaep 2023. Hak Cipta Dilindungi</p>
+            <ul class="flex justify-center mt-2 space-x-4">
+                <li>Bandung</li>
+                <li>Indonesia</li>
+            </ul>
+        </div>
     </footer>
-
-    <script src="script.js"></script>
-    <script>
-      // Tambahkan animasi menggunakan Anime.js saat keranjang belanja muncul
-    const cart = document.getElementById('cart');
-
-anime({
-    targets: cart,
-    translateY: [-200, 0], // Posisi awal dan akhir untuk animasi muncul
-    duration: 1000, // Durasi animasi dalam milidetik
-    easing: 'easeInOutQuad', // Jenis easing
-    autoplay: true // Mulai animasi secara otomatis
-});
-
-// Tambahkan fungsi untuk menambahkan produk saat tombol ditekan
-document.addEventListener('DOMContentLoaded', () => {
-    const productsContainer = document.querySelector('.products');
-
-    // Fungsi untuk menambahkan produk saat tombol ditekan
-    function addNewProduct() {
-        const newProduct = {
-            id: products.length + 1,
-            name: 'Kerudung Baru',
-            price: 75000,
-            category: 'Segiempat',
-            imageUrl: 'https://via.placeholder.com/150'
-        };
-
-        products.push(newProduct);
-
-        const newCard = createProductCard(newProduct);
-        productsContainer.appendChild(newCard);
-    }
-
-    // Tambahkan elemen button untuk menambahkan produk
-    const addProductButton = document.createElement('button');
-    addProductButton.textContent = 'Tambah Produk';
-    addProductButton.classList.add('bg-green-500', 'text-white', 'px-4', 'py-2', 'rounded-md', 'mt-4', 'hover:bg-green-600');
-    addProductButton.addEventListener('click', addNewProduct);
-
-    productsContainer.appendChild(addProductButton);
-});
-    </script>
+    
 </body>
-
+<script class="module" href="./script2.js"></script>
 </html>
